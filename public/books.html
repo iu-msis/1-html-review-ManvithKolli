@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>Home Page</title>
+  <title>Table of Books</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -9,114 +9,108 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
-   <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  
 </head>
 
 <body>
 
   <div class="ui fixed inverted menu">
     <div class="ui container">
-      <a href="https://semantic-ui.com/examples/fixed.html#" class="header item">
+      <a href="index.html" class="header item">
         Home
       </a>
       <a href="books.html" class="item">Books</a>
       <a href="stats.html" class="item">Statistics</a>
     </div>
-  </div>
+  </div>  
 
     <div class="ui main container">
       <h1 class="ui center aligned icon header" id="sample_heading">
-        <i class="user icon"></i>
-        User Information
+        <i class="book icon"></i>
+        Table of Books
       </h1>
     </div>
 
     <div class="ui segment">
+        <table class="ui fixed single line celled table">
+            <thead>
+              <tr><th>Title</th>
+              <th>Author</th>
+              <th>Year Published</th>
+              <th>Publisher</th>
+              <th>Page Count</th>
+              <th>MSRP</th>
+            </tr></thead>
+            <tbody>
+              <tr>
+                <td>Echange of Platitudes</td>
+                <td>John Fannin</td>
+                <td>2001</td>
+                <td>Tenderhook Publishers</td>
+                <td>201</td>
+                <td>6.95</td>
+              </tr>
+              <tr>
+                <td>Harry Potter</td>
+                <td>J.K Rowling</td>
+                <td>2002</td>
+                <td>Reddit Publishers</td>
+                <td>400</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>The Four Winds</td>
+                <td>Kristin Hannah</td>
+                <td>2021</td>
+                <td>Spotify Publishers</td>
+                <td>300</td>
+                <td>30</td>
+              </tr>
+              <tr>
+                <td>Crying in H mart</td>
+                <td>Michelle Zauner</td>
+                <td>2021</td>
+                <td>Groupme Publishers</td>
+                <td>500</td>
+                <td>15</td>
+              </tr>
+            </tbody>
+          </table>
 
-      <div class="ui items">
-        <div class="item">
-          <a href="../public/img/steve.jpg" target="_blank" class="ui medium image" cite="https://semantic-ui.com/views/card.html#">
-            <img src="../public/img/steve.jpg">
-            <p><cite>Potrait photo; </cite>photo by Semantic UI</p>
-          </a>
-          <div class="content">
-            <a class="header">Stevie Feliciano</a>
-            <div class="description">
-              <p>Stevie Feliciano is a <a>library scientist</a> living in New York City.</p>
-              <div class="ui list">
-                <div class="item">
-                  <i class="marker icon"></i>
-                  <div class="content">
-                    New York, NY, U.S.A
-                  </div>
-              </div>
-              <div class="item">
-                <i class="birthday cake icon"></i>
-                <div class="content">
-                  06/04/1997
-                </div>
-            </div>
-            <div class="item">
-              <i class="calendar icon"></i>
-              <div class="content">
-                24
-              </div>
-          </div>
-          <div class="item">
-            <i class="mail icon"></i>
-            <div class="content">
-              <a href="mailto:jack@iu.edu">stevie@iu.edu</a>       
-            </div>
-        </div>
-            </div>
-          </div>
-        </div>
-      </div>
+          <h1 class="ui center aligned icon header" id="sample_heading">
+            <i class="address book icon"></i>
+            Add Books
+          </h1>
 
-      </div>
-
-      <div class="ui items">
-        <div class="item">
-          <a href="../public/img/matthew.png" class="ui medium image" target="_blank" cite="https://semantic-ui.com/views/card.html#">
-            <img src="../public/img/matthew.png">
-            <p><cite>Potrait photo; </cite>photo by Semantic UI</p>
-          </a>
-          <div class="content">
-            <a class="header">Matthew Giamperio</a>
-            <div class="description">
-              <p>Matthew Giamperio is a <a>Professor</a> living in Seattle.</p>
-              <div class="ui list">
-                <div class="item">
-                  <i class="marker icon"></i>
-                  <div class="content">
-                    Seattle, WA, U.S.A
-                  </div>
-              </div>
-              <div class="item">
-                <i class="birthday cake icon"></i>
-                <div class="content">
-                  07/17/1997
-                </div>
+          <form class="ui form">
+            <div class="field">
+              <label>Title</label>
+              <input type="text" name="Title" placeholder="Title">
             </div>
-            <div class="item">
-              <i class="calendar icon"></i>
-              <div class="content">
-                24
-              </div>
-          </div>
-          <div class="item">
-            <i class="mail icon"></i>
-            <div class="content">
-              <a href="mailto:matt@iu.edu">matt@iu.edu</a>       
+            <div class="field">
+              <label>Author</label>
+              <input type="text" name="Author" placeholder="Author">
             </div>
-        </div>
+            <div class="field">
+              <label>Year Published</label>
+              <input type="text" name="Year Published" placeholder="Year Published">
             </div>
-          </div>
-        </div>
-      </div>
-
-      </div>
-
+            <div class="field">
+              <label>Publisher</label>
+              <input type="text" name="Publisher" placeholder="Publisher">
+            </div>
+            <div class="field">
+              <label>Page Count</label>
+              <input type="text" name="Page Count" placeholder="Page Count">
+            </div>
+            <div class="field">
+              <label>MSRP</label>
+              <input type="text" name="MSRP" placeholder="MSRP">
+            </div>
+            
+            <button class="ui green button" type="submit">Submit</button>
+          </form>
     </div>
 
     <div class="ui inverted vertical footer segment">
@@ -165,10 +159,9 @@
     </div>
 
 <!-- The Navbar code was taken from https://semantic-ui.com/examples/fixed.html -->
-<!-- The Body code was taken from https://semantic-ui.com/views/card.html -->
+<!-- The Table structure was taken from https://semantic-ui.com/collections/table.html -->
+<!-- The Form code was taken from https://semantic-ui.com/collections/form.html -->
 <!-- The Icons were taken from https://semantic-ui.com/elements/icon.html -->
-<!-- The Card format was taken from https://semantic-ui.com/elements/list.html -->
-<!-- The Images were taken from https://semantic-ui.com/views/card.html -->
 <!-- The Footer code was taken from https://semantic-ui.com/examples/fixed.html-->
 
 </body>
