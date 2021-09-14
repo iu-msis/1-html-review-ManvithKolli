@@ -9,6 +9,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+  <!-- <script src="js/sort.js"></script> -->
+
+  <link rel="stylesheet" href="css/sortable-theme-slick.css" />
+  <script src="js/sortable.min.js"></script>
   <link href="css/style.css" rel="stylesheet" type="text/css" />
   
 </head>
@@ -33,9 +37,10 @@
     </div>
 
     <div class="ui segment">
-        <table class="ui fixed single line celled table">
+        <table class="ui fixed single line celled table"  data-sortable>
             <thead>
-              <tr><th>Title</th>
+              <tr>
+              <th>Title</th>
               <th>Author</th>
               <th>Year Published</th>
               <th>Publisher</th>
