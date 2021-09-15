@@ -1,0 +1,18 @@
+{
+    "offers":[
+       {
+          "name":"Cole",
+          "offer":" Consultant",
+          "bonus":"100000",
+          "company":"KPMG",
+          "offerdate":"09/12/2021"
+       },
+       {
+          "name":"Rohan",
+          "offer":"SDE",
+          "bonus":"200000",
+          "company":"Google",
+          "offerdate":"09/13/2021"
+       }
+    ]
+ }
