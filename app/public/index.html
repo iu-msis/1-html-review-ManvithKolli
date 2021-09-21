@@ -6,15 +6,15 @@
   <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
   
-  <!-- <script src="https://unpkg.com/vue@next"></script> -->
+  <script src="https://unpkg.com/vue@next"></script>
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script> -->
 
-  
+  <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
 
-   <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -29,6 +29,14 @@
     </div>
   </div>
 
+  <!-- <div id="offerApp">
+    <p>{{person}}</p>
+    <h1>{{person.name.first}}</h1>
+    <p>{{prettyBirthday}}</p>
+  </div> -->
+
+  
+
     <div class="ui main container"> 
       <h1 class="ui center aligned icon header" id="sample_heading">
         <i class="user icon"></i>
@@ -36,41 +44,40 @@
       </h1>
     </div>
 
-    <div class="ui segment">
-
+    <div  id="offerApp" class="ui segment">
       <div class="ui items">
         <div class="item">
-          <a href="img/steve.jpg" target="_blank" class="ui medium image" cite="https://semantic-ui.com/views/card.html#">
-            <img src="img/steve.jpg">
-            <p><cite>Potrait photo; </cite>photo by Semantic UI</p>
+          <a v-bind:href="person.picture.large" target="_blank" class="ui medium image" cite="person.picture.large">
+            <img v-bind:src="person.picture.large">
+            <p><cite>Potrait photo; </cite>photo by Random User</p>
           </a>
-          <div class="content">
-            <a class="header">Stevie Feliciano</a>
+          <div class="content" >
+            <a class="header">{{person.name.first}}</a>
             <div class="description">
-              <p>Stevie Feliciano is a <a>library scientist</a> living in New York City.</p>
+              <p>{{person.name.first}} is a <a>library scientist</a> living in  {{person.location.city}} City.</p>
               <div class="ui list">
                 <div class="item">
                   <i class="marker icon"></i>
                   <div class="content">
-                    New York, NY, U.S.A
+                    {{person.location.city}},{{person.location.state}},{{person.location.country}}
                   </div>
               </div>
               <div class="item">
                 <i class="birthday cake icon"></i>
                 <div class="content">
-                  06/04/1997
+                  {{prettyBirthday}}
                 </div>
             </div>
             <div class="item">
               <i class="calendar icon"></i>
               <div class="content">
-                24
+                {{person.dob.age}}
               </div>
           </div>
           <div class="item">
             <i class="mail icon"></i>
             <div class="content">
-              <a href="mailto:jack@iu.edu">stevie@iu.edu</a>       
+              <a v-bind:href="'mailto:'+person.email">{{person.email}}</a>       
             </div>
         </div>
             </div>
@@ -169,9 +176,9 @@
       </div>
     </div>
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 
-    <script src="js/index.js"></script> -->
+    <script src="js/index.js"></script>
 
 <!-- The Navbar code was taken from https://semantic-ui.com/examples/fixed.html -->
 <!-- The Body code was taken from https://semantic-ui.com/views/card.html -->
