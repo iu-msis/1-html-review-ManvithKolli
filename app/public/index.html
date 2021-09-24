@@ -80,7 +80,14 @@
               <a v-bind:href="'mailto:'+person.email">{{person.email}}</a>       
             </div>
         </div>
-            </div>
+        <div class="item">
+          <div class="content">
+            <form v-on:submit.prevent="fetchUserData">
+            <button class="positive ui button">Refresh</button>
+          </form>     
+          </div>
+        </div>
+          </div>
           </div>
         </div>
       </div>
