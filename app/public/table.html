@@ -9,7 +9,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
-  <!-- <script src="js/sort.js"></script> -->
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
 
   <link rel="stylesheet" href="css/sortable-theme-slick.css" />
   <script src="js/sortable.min.js"></script>
@@ -36,7 +38,7 @@
       </h1>
     </div>
 
-    <div class="ui segment">
+    <div id="BooksData1" class="ui segment">
         <table class="ui fixed single line celled table"  data-sortable>
             <thead>
               <tr>
@@ -48,15 +50,15 @@
               <th>MSRP</th>
             </tr></thead>
             <tbody>
-              <tr>
-                <td>Echange of Platitudes</td>
-                <td>John Fannin</td>
-                <td>2001</td>
-                <td>Tenderhook Publishers</td>
-                <td>201</td>
-                <td>6.95</td>
+              <tr v-for="book in books">
+                <td>{{book.BookTitle}}</td>
+                <td>{{book.Author}}</td>
+                <td>{{book.YearPublished}}</td>
+                <td>{{book.Publisher}}</td>
+                <td>{{book.PageCount1}}</td>
+                <td>{{book.MSRP}}</td>
               </tr>
-              <tr>
+              <!-- <tr>
                 <td>Harry Potter</td>
                 <td>J.K Rowling</td>
                 <td>2002</td>
@@ -79,7 +81,7 @@
                 <td>Groupme Publishers</td>
                 <td>500</td>
                 <td>15</td>
-              </tr>
+              </tr> -->
             </tbody>
           </table>
 
@@ -88,30 +90,30 @@
             Add Books
           </h1>
 
-          <form class="ui form">
+          <form class="ui form" v-on:submit="postOffer">
             <div class="field">
               <label>Title</label>
-              <input type="text" name="Title" placeholder="Title">
+              <input type="text" v-model="offerForm.BookTitle" name="Title" placeholder="Title">
             </div>
             <div class="field">
               <label>Author</label>
-              <input type="text" name="Author" placeholder="Author">
+              <input type="text" v-model="offerForm.Author" name="Author" placeholder="Author">
             </div>
             <div class="field">
               <label>Year Published</label>
-              <input type="text" name="Year Published" placeholder="Year Published">
+              <input type="text" v-model="offerForm.YearPublished" name="Year Published" placeholder="Year Published">
             </div>
             <div class="field">
               <label>Publisher</label>
-              <input type="text" name="Publisher" placeholder="Publisher">
+              <input type="text" v-model="offerForm.Publisher" name="Publisher" placeholder="Publisher">
             </div>
             <div class="field">
               <label>Page Count</label>
-              <input type="text" name="Page Count" placeholder="Page Count">
+              <input type="text" v-model="offerForm.PageCount1" name="Page Count" placeholder="Page Count">
             </div>
             <div class="field">
               <label>MSRP</label>
-              <input type="text" name="MSRP" placeholder="MSRP">
+              <input type="text" v-model="offerForm.MSRP" name="MSRP" placeholder="MSRP">
             </div>
             
             <button class="ui green button" type="submit">Submit</button>
@@ -162,6 +164,8 @@
         </div>
       </div>
     </div>
+
+    <script src="js/books.js"></script>
 
 <!-- The Navbar code was taken from https://semantic-ui.com/examples/fixed.html -->
 <!-- The Table structure was taken from https://semantic-ui.com/collections/table.html -->

@@ -2,6 +2,7 @@
     data() {
       return {
         "person":{},
+        "books":[]
        }
     },
 
@@ -17,7 +18,6 @@
     methods:{
 
       fetchUserData(){
-
         fetch('https://randomuser.me/api/')
       .then(response=>response.json())
       .then((parsedJson) => {
@@ -26,13 +26,23 @@
       .catch(err=>{
         console.error(err)
       })
+      },
 
-      }
-
+      fetchBooksData() {
+        fetch('/api/books/')
+        .then( response => response.json() )
+        .then( (responseJson) => {
+            console.log(responseJson);
+            this.books = responseJson;
+        })
+        .catch( (err) => {
+            console.error(err);
+        })
+    }
     },
 
     created(){
-      this.fetchUserData();     
+     this.fetchUserData();
     }
   }
 
