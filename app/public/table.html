@@ -55,7 +55,7 @@
                 <td>{{book.Author}}</td>
                 <td>{{book.YearPublished}}</td>
                 <td>{{book.Publisher}}</td>
-                <td>{{book.PageCount}}</td>
+                <td>{{book.PageCount1}}</td>
                 <td>{{book.MSRP}}</td>
               </tr>
               <!-- <tr>
@@ -90,30 +90,30 @@
             Add Books
           </h1>
 
-          <form class="ui form">
+          <form class="ui form" v-on:submit="postOffer">
             <div class="field">
               <label>Title</label>
-              <input type="text" name="Title" placeholder="Title">
+              <input type="text" v-model="offerForm.BookTitle" name="Title" placeholder="Title">
             </div>
             <div class="field">
               <label>Author</label>
-              <input type="text" name="Author" placeholder="Author">
+              <input type="text" v-model="offerForm.Author" name="Author" placeholder="Author">
             </div>
             <div class="field">
               <label>Year Published</label>
-              <input type="text" name="Year Published" placeholder="Year Published">
+              <input type="text" v-model="offerForm.YearPublished" name="Year Published" placeholder="Year Published">
             </div>
             <div class="field">
               <label>Publisher</label>
-              <input type="text" name="Publisher" placeholder="Publisher">
+              <input type="text" v-model="offerForm.Publisher" name="Publisher" placeholder="Publisher">
             </div>
             <div class="field">
               <label>Page Count</label>
-              <input type="text" name="Page Count" placeholder="Page Count">
+              <input type="text" v-model="offerForm.PageCount1" name="Page Count" placeholder="Page Count">
             </div>
             <div class="field">
               <label>MSRP</label>
-              <input type="text" name="MSRP" placeholder="MSRP">
+              <input type="text" v-model="offerForm.MSRP" name="MSRP" placeholder="MSRP">
             </div>
             
             <button class="ui green button" type="submit">Submit</button>
