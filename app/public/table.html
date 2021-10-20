@@ -90,7 +90,7 @@
             Add Books
           </h1>
 
-          <form class="ui form" v-on:submit="postOffer">
+          <form class="ui form" v-on:submit.prevent="postOffer">
             <div class="field">
               <label>Title</label>
               <input type="text" v-model="offerForm.BookTitle" name="Title" placeholder="Title">
