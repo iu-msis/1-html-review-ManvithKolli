@@ -55,8 +55,12 @@
                 <td>{{book.Author}}</td>
                 <td>{{book.YearPublished}}</td>
                 <td>{{book.Publisher}}</td>
-                <td>{{book.PageCount1}}</td>
+                <td>{{book.PageCount}}</td>
                 <td>{{book.MSRP}}</td>
+                <td>
+                  <button type="button" v-on:click="handleEditOffer(book)" class="btn btn-outline-secondary btn-sm">Edit</button>
+                  <button type="button" v-on:click="postDeleteOffer(book)" class="btn btn-outline-secondary btn-sm">Delete</button>
+                </td>
               </tr>
               <!-- <tr>
                 <td>Harry Potter</td>
@@ -85,12 +89,14 @@
             </tbody>
           </table>
 
-          <h1 class="ui center aligned icon header" id="sample_heading">
+          <!-- <h1 class="ui center aligned icon header" id="sample_heading">
             <i class="address book icon"></i>
             Add Books
-          </h1>
+          </h1> -->
 
-          <form class="ui form" v-on:submit.prevent="postOffer">
+          <h2>{{ selectedOffer === null ? "Add " : "Edit " }} Books</h2>
+
+          <form class="ui form" v-on:submit="postOffer">
             <div class="field">
               <label>Title</label>
               <input type="text" v-model="offerForm.BookTitle" name="Title" placeholder="Title">
@@ -116,7 +122,10 @@
               <input type="text" v-model="offerForm.MSRP" name="MSRP" placeholder="MSRP">
             </div>
             
-            <button class="ui green button" type="submit">Submit</button>
+            <button class="ui green button" type="submit">{{ selectedOffer === null ? "Add " : "Edit " }} Books</button>
+            <button type="button" class="btn btn-outline-secondary" 
+            v-if="selectedOffer"
+            v-on:click="handleResetEdit">Cancel Edit</button>
           </form>
     </div>
 
