@@ -77,13 +77,13 @@ const BooksData = {
           });
       },
       postDeleteOffer(o) {  
-        if ( !confirm("Are you sure you want to delete the offer from " + o.companyName + "?") ) {
+        if ( !confirm("Are you sure you want to delete the offer from " + o.BookTitle + "?") ) {
             return;
         }  
         
         console.log("Delete!", o);
 
-        fetch('api/offer/delete.php', {
+        fetch('api/books/delete.php', {
             method:'POST',
             body: JSON.stringify(o),
             headers: {

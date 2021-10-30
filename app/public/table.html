@@ -62,37 +62,8 @@
                   <button type="button" v-on:click="postDeleteOffer(book)" class="btn btn-outline-secondary btn-sm">Delete</button>
                 </td>
               </tr>
-              <!-- <tr>
-                <td>Harry Potter</td>
-                <td>J.K Rowling</td>
-                <td>2002</td>
-                <td>Reddit Publishers</td>
-                <td>400</td>
-                <td>20</td>
-              </tr>
-              <tr>
-                <td>The Four Winds</td>
-                <td>Kristin Hannah</td>
-                <td>2021</td>
-                <td>Spotify Publishers</td>
-                <td>300</td>
-                <td>30</td>
-              </tr>
-              <tr>
-                <td>Crying in H mart</td>
-                <td>Michelle Zauner</td>
-                <td>2021</td>
-                <td>Groupme Publishers</td>
-                <td>500</td>
-                <td>15</td>
-              </tr> -->
             </tbody>
           </table>
-
-          <!-- <h1 class="ui center aligned icon header" id="sample_heading">
-            <i class="address book icon"></i>
-            Add Books
-          </h1> -->
 
           <h2>{{ selectedOffer === null ? "Add " : "Edit " }} Books</h2>
 
@@ -115,7 +86,7 @@
             </div>
             <div class="field">
               <label>Page Count</label>
-              <input type="text" v-model="offerForm.PageCount1" name="Page Count" placeholder="Page Count">
+              <input type="text" v-model="offerForm.PageCount" name="Page Count" placeholder="Page Count">
             </div>
             <div class="field">
               <label>MSRP</label>
